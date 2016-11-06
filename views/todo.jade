@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	.text-center.h1 Edit ToDo
+		form(method='post', action='/todos/edit/#{todo._id}')
+
+
+			label.h3 Current ToDo
+				input.form-control(type='text', placeholder='#{todo.content}', name='content')
+				label.h3 Current priority, 1=high, etc
+					input.form-control(type='number', min=1, max=3, placeholder='#{todo.priority}', name='priority')
+					label.h3 Edit Date
+						input.form-control(type='Date', name='due_date')
+
+						input(type='submit', value='Update').btn.btn-primary.btn-lg
+						a(href='/todos').btn.btn-default.btn-lg Back
+		form(action='/todos/destroy/#{todo._id}', method='post')
+			input.btn.btn-danger.btn-lg(type='submit', value='Delete')

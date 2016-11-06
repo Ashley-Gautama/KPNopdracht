@@ -1,0 +1,13 @@
+label {
+  width:100%;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  color: green
+}
+
+.todo{
+  color: red;
+
+}
